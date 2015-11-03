@@ -16,9 +16,9 @@ def find(input_string, substring, start, end):
     """
     Describe your function
 
-    :param :
-    :return:
-    :raises:
+    :param : takes as argument the string, the substring that is being searched for, the start and the end
+    :return: returns the "lowest index (integer) where the substring is found in the index range start <= index <= end"
+    :raises: ValueError (not entering a string)
 
     """
     return -1
@@ -28,9 +28,9 @@ def multi_find(input_string, substring, start, end):
     """
     Describe your function
 
-    :param :
-    :return:
-    :raises:
+    :param : a string, a substring, a start index, and an end index
+    :return: a string with zero or more indices separated by commas
+    :raises: ValueError
 
     """
     result = ""
