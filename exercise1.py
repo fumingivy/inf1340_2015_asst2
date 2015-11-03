@@ -21,6 +21,22 @@ def pig_latinify(word):
     :raises:
 
     """
-    result = ""
 
-    return result
+    word = raw_input("Please type your word: "):
+
+# set two appendix as variables
+    var1 = "yay"
+    var2 = "ay"
+
+
+# make sure the word format
+    if len(word) > 0 and word.isalpha():
+        word_lowercase = word.lower()
+        first_letter = word_lowercase [0]
+
+
+# if a word begins with a vowel, append "yay" to the end of the word.
+        if first_letter = "a" or "e" or "i" or "o" or "u":
+            new_word = word_lowercase + first_letter + var1
+            new_word = new_word [1:]
+            print (new_word)
