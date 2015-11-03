@@ -29,7 +29,9 @@ def union(table1, table2):
 def intersection(table1, table2):
     """
     Describe your function
-
+    1. checks that the schema for both tables are the same
+    2. returns a new table that contains all unique rows that appear in BOTH tables
+    :raises: MismathedAttributesException Error
     """
     return []
 
@@ -37,7 +39,9 @@ def intersection(table1, table2):
 def difference(table1, table2):
     """
     Describe your function
-
+    1. checks that the schema for both tables are the same
+    2. returns a new table that contains all unique rows that appear in the FIRST table but not the second
+    :raises: MismatchedAttributesException Error
     """
     return []
 
