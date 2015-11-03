@@ -16,11 +16,15 @@ def pig_latinify(word):
     """
     Describe your function
 
-    :param :
-    :return:
-    :raises:
+    :param : one argument - a word
+    :return: same word but in pig latin (either move 0 to end and add "ay", or, if "vowel", add "yay" to end
+    :raises: ValueError (if word not a string), IndexError (if word is only one letter?)
 
     """
+    #first step: convert to lowercase?
+    #second: search the word at index 0 to figure out if the word beings with a vowel or a consonant
+        #third (if-consonant): move index 0 letter to the end
+    #fourth: append either "ay" or "yay"
 
     word = raw_input("Please type your word: "):
 
