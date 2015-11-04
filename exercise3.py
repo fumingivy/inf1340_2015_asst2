@@ -17,6 +17,10 @@ def union(table1, table2):
     row = 0
     index = 0
     new_table = []
+    for line in table1:
+        for column in table1[row]:
+            if table1[row][index] == table2[row][index]:
+                new_table = "something"
     # compares the tables row by row to make sure that each entry (i.e. table[row][column]) matches.
     # takes one version of the rows that match
     # takes from both tables the rows that done match
