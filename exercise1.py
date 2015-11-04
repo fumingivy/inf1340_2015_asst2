@@ -9,9 +9,12 @@ This module converts English words to Pig Latin words
 __author__ = 'Susan Sim'
 __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
+
+
+
 def pig_latinify(word):
     output = ""
-    VOWELS = ["a, e, i, o, u"]
+    vowels = "aeiou"
 
     """
     Describe your function
