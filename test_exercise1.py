@@ -38,4 +38,4 @@ def test_first_letter_consonant():
      assert pig_latinify("pie") == "iepay"
 
 def test_first_letter_consonant():
-     assert pig_latinify("pie") == "iepay"
+     assert pig_latinify(" ") == "None"
