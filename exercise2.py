@@ -13,6 +13,11 @@ __license__ = "MIT License"
 
 
 def find(input_string, substring, start, end):
+    # take the input string as input_string[start:end]
+    # search the input string character by character for the substring
+        # this requires the use of a for loop
+    # return the index where the substring starts
+    # if substring isn't there, return NONE (or -1?)
     """
     Describe your function
 
