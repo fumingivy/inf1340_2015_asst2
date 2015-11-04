@@ -26,3 +26,9 @@ def test_multi_find_basic():
     Test multi_find function.
     """
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
+
+
+# test cases
+# include instances where substring is found
+# include instances where substring is not found
+# does that refer to ones where the substring isn't present in the string?
