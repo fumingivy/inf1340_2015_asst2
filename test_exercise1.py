@@ -37,5 +37,12 @@ def test_first_letter_vowel():
 def test_first_letter_consonant():
      assert pig_latinify("pie") == "iepay"
 
-def test_first_letter_consonant():
+def test_blank():
      assert pig_latinify(" ") == "None"
+
+def test_with_numbers():
+     assert pig_latinify("name123") == "ame123nay"
+
+def test_with_hyphen():
+     assert pig_latinify("top-down") == "op-downtay"
+
