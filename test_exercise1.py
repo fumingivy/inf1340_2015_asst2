@@ -34,15 +34,22 @@ def test_basic():
 def test_first_letter_vowel():
      assert pig_latinify("abroad") == "abroadyay"
 
-def test_first_letter_consonant():
+def test__not_first_letter_vowel():
      assert pig_latinify("pie") == "iepay"
 
+def test__all_vowel():
+     assert pig_latinify("i.e.") == "i.e.yay"
+
+def test__only_consonants():
+     assert pig_latinify("why") == "whyay"
+
 def test_blank():
-     assert pig_latinify(" ") == "None"
+     assert pig_latinify(" ") == " "
 
 def test_with_numbers():
      assert pig_latinify("name123") == "ame123nay"
 
 def test_with_hyphen():
      assert pig_latinify("top-down") == "op-downtay"
+
 
