@@ -15,6 +15,12 @@ __license__ = "MIT License"
 from exercise1 import pig_latinify
 
 
+"""
+add your own test cases to test_exercise1
+
+be sure to use a variety of initial letters
+"""
+
 def test_basic():
     """
     Basic test cases from assignment hand out
@@ -23,5 +29,4 @@ def test_basic():
     assert pig_latinify("scratch") == "atchscray"
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
-
 
