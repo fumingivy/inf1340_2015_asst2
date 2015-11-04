@@ -24,7 +24,8 @@ def find(input_string, substring, start, end):
 
 def multi_find(input_string, substring, start, end):
     index = 0
-    while index <= end:
+    indexes = ""
+    while index < end:
         for character in range(start, end):
             if substring[0] == input_string[index]:
                 return index
