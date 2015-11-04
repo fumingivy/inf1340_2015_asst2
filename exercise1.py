@@ -16,10 +16,7 @@ def pig_latinify(word):
     # removed lowercase method
 
     if first_letter in vowels:
-        new_word = word() + first_letter + "yay"
-        new_word = new_word[1:]
-        print (new_word)
-
+        word += "yay"
     if first_letter not in vowels:
         word = word[1:] + word[0] + "ay"
 
@@ -33,9 +30,11 @@ def pig_latinify(word):
 
     """
 
-    return output
+    return word
 
-
+print pig_latinify("pear")
+print pig_latinify("apple")
+print pig_latinify("scratch")
 
 
 
