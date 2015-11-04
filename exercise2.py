@@ -31,11 +31,16 @@ def find(input_string, substring, start, end):
     :raises: ValueError (not entering a string)
 
     """
-print find("hello", "el", 0, 4)
 
 
 def multi_find(input_string, substring, start, end):
     index = 0
+    while index <= end:
+        for character in range(start, end):
+            if substring[0] == input_string[index]:
+                return index
+            index += 1
+
     # search the input string character by character for the substring
         # do this for each letter PAST the start of the first instance of the substring
         # this requires a while-loop
@@ -54,3 +59,5 @@ def multi_find(input_string, substring, start, end):
 
     return result
 
+print find("hello", "el", 0, 4)
+print multi_find("hello hello hello", "el", 0, 14)
