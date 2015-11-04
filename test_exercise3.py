@@ -72,3 +72,7 @@ def test_difference():
               [7274, "Robinson", 37]]
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
+
+# add your own test cases
+# include tables with various schema
+# which produce a variety of results with the table operations
