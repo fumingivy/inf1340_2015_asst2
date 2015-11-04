@@ -26,28 +26,14 @@ def multi_find(input_string, substring, start, end):
     index = 0
     indexes = ""
     while index < end:
-        for character in range(start, end):
-            if substring[0] == input_string[index]:
-                return index
-            index += 1
+        for letter in range(start, end):
+            if input_string[index:index+len(substring)] == substring:
+                indexes += str(index) + ","
+    return indexes
 
-    # search the input string character by character for the substring
-        # do this for each letter PAST the start of the first instance of the substring
-        # this requires a while-loop
-        # condition that controls while look is an index count?
-    # return EACH index where the substring starts
+
     # if the substring isn't there, return NONE (or -1?)
-    """
-    Describe your function
 
-    :param : a string, a substring, a start index, and an end index
-    :return: a string with zero or more indices separated by commas
-    :raises: ValueError
-
-    """
-    result = ""
-
-    return result
 
 print find("hello", "el", 0, 4)
 print multi_find("hello hello hello", "el", 0, 14)
