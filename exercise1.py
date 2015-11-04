@@ -11,15 +11,16 @@ __author__ = 'Eden Rusnell & Ming Fu'
 
 def pig_latinify(word):
     output = ""
-    vowels = "a, e, i, o, u"
+    vowels = "aeiou"
     first_letter = word[0]
     # removed lowercase method
-
     if first_letter in vowels:
-        word += "yay"
-
+        return word + "yay"
     while first_letter not in vowels:
-        word = word[1:] + word[0] + "ay"
+        word = word[1:] + word[0]
+        first_letter = word[0]
+        if first_letter in vowels:
+            return word + "ay"
 
 
     """
@@ -30,8 +31,6 @@ def pig_latinify(word):
     :raises: ValueError (if word not a string), IndexError (if word is only one letter?)
 
     """
-
-    return word
 
 print pig_latinify("pear")
 print pig_latinify("apple")
