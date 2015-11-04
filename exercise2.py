@@ -30,6 +30,13 @@ def find(input_string, substring, start, end):
 
 
 def multi_find(input_string, substring, start, end):
+    # take the input string as input_string[start:end]
+    # search the input string character by character for the substring
+        # do this for each letter PAST the start of the first instance of the substring
+        # this requires a while-loop
+        # condition that controls while look is an index count?
+    # return EACH index where the substring starts
+    # if the substring isn't there, return NONE (or -1?)
     """
     Describe your function
 
