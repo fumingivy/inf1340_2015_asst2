@@ -28,7 +28,7 @@ def pig_latinify(word):
         # add "ay" to the end of this new word
     # if a word begins with a vowel, append "yay" to the end of the word. for character in word:
     for first_letter not in vowels
-        new_word = [find(vowels)] + [0:(find(vowels)-1)] +"ay"
+        new_word = [input_string(find(vowels))] + [0:input_string((find(vowels)-1))] +"ay"
         print(new_word)
     """
     Describe your function
