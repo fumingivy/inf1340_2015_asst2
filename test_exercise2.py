@@ -15,6 +15,7 @@ from exercise2 import find, multi_find
 
 
 def test_find_basic():
+
     """
     Test find function.
     """
@@ -28,7 +29,11 @@ def test_multi_find_basic():
     assert multi_find("Ni! Ni! Ni! Ni!", "Ni", 0, 20) == "0,4,8,12"
 
 
+
 # test cases
 # include instances where substring is found
 # include instances where substring is not found
 # does that refer to ones where the substring isn't present in the string?
+
+def test_find_specific():
+    assert find("I'm in class right now", "now", 0, 21) == 19
