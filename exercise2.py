@@ -13,6 +13,11 @@ __license__ = "MIT License"
 
 
 def find(input_string, substring, start, end):
+    index = 0
+    for character in input_string[start:end]:
+        if substring[0] == input_string[index]:
+            return index
+        index += 1
     # take the input string as input_string[start:end]
     # search the input string character by character for the substring
         # this requires the use of a for loop
@@ -26,14 +31,11 @@ def find(input_string, substring, start, end):
     :raises: ValueError (not entering a string)
 
     """
-    
-
-    return -1
+print find("hello", "el", 0, 4)
 
 
 def multi_find(input_string, substring, start, end):
-    # take the input string as input_string[start:end]
-    input_string[0:3]
+    index = 0
     # search the input string character by character for the substring
         # do this for each letter PAST the start of the first instance of the substring
         # this requires a while-loop
