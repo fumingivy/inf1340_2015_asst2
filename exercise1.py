@@ -15,6 +15,7 @@ __copyright__ = "2015 Susan Sim"
 def pig_latinify(word):
     output = ""
     vowels = "aeiou"
+    first_letter = word[0]
     # make the word lowercase (is this required or assumed?)
     # check if the first letter is a vowel
         # if the first letter is a vowel, add "yay
