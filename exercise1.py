@@ -13,10 +13,7 @@ def pig_latinify(word):
     output = ""
     vowels = "a, e, i, o, u"
     first_letter = word[0]
-    # make the word lowercase (is this required or assumed?)--assumed
-    # make sure the word format
-    if len(word) > 0 and word.isalpha():
-        first_letter = word[0]
+    # removed lowercase method
     # check if the first letter is a vowel
         # if the first letter is a vowel, add "yay
     if first_letter in vowels:
@@ -27,8 +24,9 @@ def pig_latinify(word):
         # keep moving letters to the end until the first letter is a vowel
         # add "ay" to the end of this new word
     # if a word begins with a vowel, append "yay" to the end of the word. for character in word:
+
     for first_letter not in vowels
-        new_word = [input_string(find(vowels))] + [0:input_string((find(vowels)-1))] +"ay"
+        new_word = [(find(vowels))] + [0:input_string((find(vowels)-1))] +"ay"
         print(new_word)
     """
     Describe your function
