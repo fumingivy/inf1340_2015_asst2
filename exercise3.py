@@ -37,6 +37,10 @@ def union(table1, table2):
 def intersection(table1, table2):
     row = 0
     index = 0
+    # does row-by-row comparison of tables
+    # does index-by-index comparison of rows
+    # finds rows that are in both table1 and table2
+    # creates a new table containing those rows
     """
     Describe your function
     1. checks that the schema for both tables are the same
