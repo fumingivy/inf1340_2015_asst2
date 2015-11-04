@@ -16,6 +16,7 @@ __license__ = "MIT License"
 def union(table1, table2):
     row = 0
     index = 0
+    new_table = []
     # compares the tables row by row to make sure that each entry (i.e. table[row][column]) matches.
     # takes one version of the rows that match
     # takes from both tables the rows that done match
@@ -37,6 +38,7 @@ def union(table1, table2):
 def intersection(table1, table2):
     row = 0
     index = 0
+    new_table = []
     # does row-by-row comparison of tables
     # does index-by-index comparison of rows
     # finds rows that are in both table1 and table2
@@ -53,6 +55,11 @@ def intersection(table1, table2):
 def difference(table1, table2):
     row = 0
     index = 0
+    new_table = []
+    # does row-by-row comparison of tables
+    # does index-by-index comparison of rows
+    # finds rows that are in table 1 and NOT in table 2
+    # creates new table containing those rows
     """
     Describe your function
     1. checks that the schema for both tables are the same
