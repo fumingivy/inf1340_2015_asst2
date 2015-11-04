@@ -18,19 +18,8 @@ def find(input_string, substring, start, end):
         if input_string[index:index+len(substring)] == substring:
             return index
         index += 1
-    # take the input string as input_string[start:end]
-    # search the input string character by character for the substring
-        # this requires the use of a for loop
-    # return the index where the substring starts
+
     # if substring isn't there, return NONE (or -1?)
-    """
-    Describe your function
-
-    :param : takes as argument the string, the substring that is being searched for, the start and the end
-    :return: returns the "lowest index (integer) where the substring is found in the index range start <= index <= end"
-    :raises: ValueError (not entering a string)
-
-    """
 
 
 def multi_find(input_string, substring, start, end):
