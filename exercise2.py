@@ -29,6 +29,7 @@ def multi_find(input_string, substring, start, end):
         for letter in range(start, end):
             if input_string[index:index+len(substring)] == substring:
                 indexes += str(index) + ","
+            index += 1
     return indexes
 
 
