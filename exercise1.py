@@ -17,7 +17,8 @@ def pig_latinify(word):
 
     if first_letter in vowels:
         word += "yay"
-    if first_letter not in vowels:
+
+    while first_letter not in vowels:
         word = word[1:] + word[0] + "ay"
 
 
