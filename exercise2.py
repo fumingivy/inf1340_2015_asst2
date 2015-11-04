@@ -33,6 +33,7 @@ def find(input_string, substring, start, end):
 
 def multi_find(input_string, substring, start, end):
     # take the input string as input_string[start:end]
+    input_string[0:3]
     # search the input string character by character for the substring
         # do this for each letter PAST the start of the first instance of the substring
         # this requires a while-loop

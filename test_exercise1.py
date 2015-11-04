@@ -30,3 +30,6 @@ def test_basic():
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
 
+
+def test_words():
+     assert pig_latinify("dog") == "ogday"
