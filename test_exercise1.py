@@ -32,9 +32,10 @@ def test_basic():
 
 
 def test_first_letter_vowel():
-     assert pig_latinify("apple") == "appleyay"
+     assert pig_latinify("abroad") == "abroadyay"
 
 def test_first_letter_consonant():
      assert pig_latinify("pie") == "iepay"
 
-
+def test_first_letter_consonant():
+     assert pig_latinify("pie") == "iepay"
