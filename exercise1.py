@@ -15,6 +15,12 @@ __copyright__ = "2015 Susan Sim"
 def pig_latinify(word):
     output = ""
     vowels = "aeiou"
+    # make the word lowercase (is this required or assumed?)
+    # check if the first letter is a vowel
+        # if the first letter is a vowel, add "yay
+    # if the first letter is a consonant, more it to the end
+        # keep moving letters to the end until the first letter is a vowel
+        # add "ay" to the end of this new word
 
     """
     Describe your function
@@ -24,10 +30,7 @@ def pig_latinify(word):
     :raises: ValueError (if word not a string), IndexError (if word is only one letter?)
 
     """
-    #first step: convert to lowercase?
-    #second: search the word at index 0 to figure out if the word beings with a vowel or a consonant
-        #third (if-consonant): move index 0 letter to the end
-    #fourth: append either "ay" or "yay"
+
     return output
 
 
@@ -45,7 +48,7 @@ if len(word) > 0 and word.isalpha():
 # if a word begins with a vowel, append "yay" to the end of the word.
 if first_letter == "a" or "e" or "i" or "o" or "u":
     new_word = word.lowercase() + first_letter + var1 # this doesn't make sense, as you haven't defined any of these variables
-    new_word = new_word [1:]
+    new_word = new_word [1:] # this isn't the easiest way to do this
     print (new_word)
 
 
