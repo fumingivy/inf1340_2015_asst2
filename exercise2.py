@@ -14,7 +14,7 @@ __license__ = "MIT License"
 
 def find(input_string, substring, start, end):
     index = 0
-    for character in input_string[start:end]:
+    for character in range(start, end):
         if substring[0] == input_string[index]:
             return index
         index += 1
