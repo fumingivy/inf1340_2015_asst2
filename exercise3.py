@@ -64,7 +64,7 @@ def intersection(table1, table2):
     index = 0
     new_table = []
     in_both = False
-    for lines in table1[0:-1]:
+    for line in table1[0:-1]:
         row += 1
         index = 0
         for character in table1[row]:
@@ -90,10 +90,10 @@ def difference(table1, table2):
     row = 0
     new_table = []
     unique = False
-    for lines in table1[0:-1]:
+    for rows in table1[0:-1]:
         row += 1
         index = 0
-        for character in table1[row]:
+        for columns in table1[row]:
             if table1[row][index] == table2[row][index]:
                 unique = False
             else:
@@ -114,6 +114,8 @@ def difference(table1, table2):
     """
     return []
 
+print difference(GRADUATES, MANAGERS)
+print difference(MANAGERS, GRADUATES)
 
 #####################
 # HELPER FUNCTIONS ##
