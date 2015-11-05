@@ -20,8 +20,8 @@ MANAGERS = [["Number", "Surname", "Age"],
 
 GRADUATES = [["Number", "Surname", "Age"],
             [7274, "Robinson", 37],
-            [7432, "O'Malley", 39],
-            [9824, "Darkes", 38]]
+            [9824, "Darkes", 38],
+            [7432, "O'Malley", 39]]
 
 def remove_duplicates(l):
     """
@@ -41,7 +41,7 @@ def remove_duplicates(l):
 
 def union(table1, table2):
     row = 1
-    new_table = []
+    new_table = [table1[0]]
     for line in table1[0:-1]:
         new_table += [table1[row], table2[row]]
         row += 1
@@ -74,20 +74,23 @@ def check_match(table1, table2):
 
 def intersection(table1, table2):
     row = 0
-    index = 0
-    new_table = []
+    row1 = 1
+    new_table = [table1[0]]
     in_both = False
-    for line in table1[0:-1]:
-        row += 1
-        index = 0
-        for character in table1[row]:
-            if table1[row][index] == table2[row][index]:
-                in_both = True
-            else:
-                in_both = False
-            index += 1
-        if in_both is True:
-            new_table += table1[row]
+    while row1 < len(table1):
+        row = 0
+        for rows in table1:
+            index = 0
+            for columns in table1[row1]:
+                if table1[row1][index] == table2[row][index]:
+                    in_both = True
+                else:
+                    in_both = False
+                index += 1
+            if in_both is True:
+                new_table += [table1[row]]
+            row += 1
+        row1 += 1
     return new_table
 
     """
@@ -101,19 +104,21 @@ def intersection(table1, table2):
 
 def difference(table1, table2):
     row = 0
-    new_table = []
+    row1 = 0
+    new_table = [table1[0]]
     unique = False
     for rows in table1[0:-1]:
-        row += 1
         index = 0
-        for columns in table1[row]:
-            if table1[row][index] == table2[row][index]:
+        for columns in table1[row1]:
+            if table1[row1][index] == table2[row][index]:
                 unique = False
             else:
                 unique = True
             index += 1
-        if unique is True:
-            new_table += table1[row]
+        row += 1
+    row1 += 1
+    if unique is True:
+        new_table += [table1[row1]]
     return new_table
     # does row-by-row comparison of tables
     # does index-by-index comparison of rows
@@ -129,7 +134,7 @@ def difference(table1, table2):
 
 print difference(GRADUATES, MANAGERS)
 print difference(MANAGERS, GRADUATES)
-
+print intersection(GRADUATES, MANAGERS)
 #####################
 # HELPER FUNCTIONS ##
 #####################
