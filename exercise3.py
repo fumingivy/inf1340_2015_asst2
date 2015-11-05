@@ -58,6 +58,19 @@ def union(table1, table2):
         if tables t1 and t2 don't have the same attributes
     """
 
+def check_match(table1, table2):
+    index = 0
+    matching = False
+    for column in table1[0]:
+        if table2[0][index] == table2[0][index]:
+            matching = True
+            index += 1
+        else:
+            matching = False
+    if matching is True:
+        return matching
+    else:
+        return MismatchedAttributesException
 
 def intersection(table1, table2):
     row = 0
