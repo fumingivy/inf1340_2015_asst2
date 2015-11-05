@@ -28,30 +28,30 @@ def test_basic():
     assert pig_latinify("apple") == "appleyay"
 
 def test_alphabet():
-    assert pig_latinify("agoraphobic")
-    assert pig_latinify("bumblebee")
-    assert pig_latinify("crasching")
-    assert pig_latinify("divinity")
-    assert pig_latinify("ergonomic")
-    assert pig_latinify("fortunate")
-    assert pig_latinify("goulash")
-    assert pig_latinify("herbs")
-    assert pig_latinify("igloo")
-    assert pig_latinify("jealousy")
-    assert pig_latinify("killers")
-    assert pig_latinify("linework")
-    assert pig_latinify("manageable")
-    assert pig_latinify("noble")
-    assert pig_latinify("opulent")
-    assert pig_latinify("quietly")
-    assert pig_latinify("robust")
-    assert pig_latinify("sombulent")
-    assert pig_latinify("television")
-    assert pig_latinify("university")
-    assert pig_latinify("witchy")
-    assert pig_latinify("xylophone")
-    assert pig_latinify("yellow")
-    assert pig_latinify("zed")
+    assert pig_latinify("agoraphobic") == "agoraphobicyay"
+    assert pig_latinify("bumblebee") == "umblebeebay"
+    assert pig_latinify("crashing") == "ashingcray"
+    assert pig_latinify("divinity") == "ivinityday"
+    assert pig_latinify("ergonomic") == "ergonomicyay"
+    assert pig_latinify("fortunate") == "ortunatefay"
+    assert pig_latinify("goulash") == "oulashgay"
+    assert pig_latinify("herbs") == "erbshay"
+    assert pig_latinify("igloo") == "iglooyay"
+    assert pig_latinify("jealousy") == "ealousyjay"
+    assert pig_latinify("killers") == "illerskay"
+    assert pig_latinify("linework") == "ineworklay"
+    assert pig_latinify("manageable") == "anageablemay"
+    assert pig_latinify("noble") == "oblenay"
+    assert pig_latinify("opulent") == "opulentyay"
+    assert pig_latinify("quietly") == "ietlyquay"
+    assert pig_latinify("robust") == "obustray"
+    assert pig_latinify("sombulent") == "ombulentsay"
+    assert pig_latinify("television") == "elevisiontay"
+    assert pig_latinify("university") == "universityyay"
+    assert pig_latinify("witchy") == "itchyway"
+    assert pig_latinify("xylophone") == "ylophonexay"
+    assert pig_latinify("yellow") == "ellowyay"
+    assert pig_latinify("zed") == "edzay"
 
 
 
