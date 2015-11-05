@@ -27,6 +27,9 @@ MANAGERS = [["Number", "Surname", "Age"],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
 
+MISMATCHED = [["Name", "Age", "Title", "Sign"],
+              ["Tom", 23, "Dr.", "Libra"],
+              ["Jenny", 47, "Captain", "Gemini"]]
 
 #####################
 # HELPER FUNCTIONS ##
@@ -76,3 +79,4 @@ def test_difference():
 # add your own test cases
 # include tables with various schema
 # which produce a variety of results with the table operations
+
