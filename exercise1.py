@@ -30,8 +30,4 @@ def pig_latinify(word):
 
 
 
-
-
-
-
 __license__ = "MIT License"

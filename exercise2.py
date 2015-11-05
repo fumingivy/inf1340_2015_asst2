@@ -11,7 +11,6 @@ __email__ = "ses@drsusansim.org"
 __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
-
 def find(input_string, substring, start, end):
     index = 0
     for letter in range(start, end):
