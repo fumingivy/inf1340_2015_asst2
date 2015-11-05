@@ -13,6 +13,7 @@ __author__ = 'Eden Rusnell & Ming Fu'
 def pig_latinify(word):
     output = ""
     vowels = "aeiou"
+    y_except = "y"
     first_letter = word[0]
     if first_letter in vowels:
         return word + "yay"
@@ -21,7 +22,8 @@ def pig_latinify(word):
         first_letter = word[0]
         if first_letter in vowels:
             return word + "ay"
-
+        if first_letter in y_except:
+            return word + "ay"
 
 
 
