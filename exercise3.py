@@ -88,8 +88,20 @@ def intersection(table1, table2):
 
 def difference(table1, table2):
     row = 0
-    index = 0
     new_table = []
+    unique = False
+    for lines in table1[0:-1]:
+        row += 1
+        index = 0
+        for character in table1[row]:
+            if table1[row][index] == table2[row][index]:
+                unique = False
+            else:
+                unique = True
+            index += 1
+        if unique is True:
+            new_table += table1[row]
+    return new_table
     # does row-by-row comparison of tables
     # does index-by-index comparison of rows
     # finds rows that are in table 1 and NOT in table 2
