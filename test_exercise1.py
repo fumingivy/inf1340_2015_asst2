@@ -94,7 +94,7 @@ def test_with_hyphen():
 
 def test_with_dot():
      assert pig_latinify("e.g.") == "e.g.yay"
-     assert pig_latinify("Dr.") == ""
+     assert pig_latinify("Dr.") == "Dr.ay"
 
 
 # add exception for when y is a vowel
