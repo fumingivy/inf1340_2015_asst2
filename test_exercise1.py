@@ -22,13 +22,38 @@ be sure to use a variety of initial letters
 """
 
 def test_basic():
-    """
-    Basic test cases from assignment hand out
-    """
     assert pig_latinify("dog") == "ogday"
     assert pig_latinify("scratch") == "atchscray"
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
+
+def test_alphabet():
+    assert pig_latinify("agoraphobic")
+    assert pig_latinify("bumblebee")
+    assert pig_latinify("crasching")
+    assert pig_latinify("divinity")
+    assert pig_latinify("ergonomic")
+    assert pig_latinify("fortunate")
+    assert pig_latinify("goulash")
+    assert pig_latinify("herbs")
+    assert pig_latinify("igloo")
+    assert pig_latinify("jealousy")
+    assert pig_latinify("killers")
+    assert pig_latinify("linework")
+    assert pig_latinify("manageable")
+    assert pig_latinify("noble")
+    assert pig_latinify("opulent")
+    assert pig_latinify("quietly")
+    assert pig_latinify("robust")
+    assert pig_latinify("sombulent")
+    assert pig_latinify("television")
+    assert pig_latinify("university")
+    assert pig_latinify("witchy")
+    assert pig_latinify("xylophone")
+    assert pig_latinify("yellow")
+    assert pig_latinify("zed")
+
+
 
 
 def test_first_letter_vowel():
@@ -39,12 +64,6 @@ def test__not_first_letter_vowel():
 
 def test__all_vowel():
      assert pig_latinify("eye") == "eyeyay"
-
-def test__only_consonants():
-     assert pig_latinify("why") == "whyay"
-
-def test_blank():
-     assert pig_latinify(" ") == " "
 
 def test_with_numbers():
      assert pig_latinify("name123") == "ame123nay"
