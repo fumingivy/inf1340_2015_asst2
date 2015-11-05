@@ -23,13 +23,4 @@ def pig_latinify(word):
             return word + "ay"
 
 
-print pig_latinify("pear")
-print pig_latinify("apple")
-print pig_latinify("scratch")
-
-
-
-
 __license__ = "MIT License"
-
-pig_latinify(word)
