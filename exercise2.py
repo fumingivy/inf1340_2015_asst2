@@ -50,7 +50,7 @@ def multi_find(input_string, substring, start, end):
         indexes = indexes[0:-1]
         return indexes
     else:
-        return ""
+        return " "
 
 
     # if the substring isn't there, return NONE (or -1?)
