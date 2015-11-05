@@ -56,7 +56,6 @@ def multi_find(input_string, substring, start, end):
 
     # if the substring isn't there, return NONE (or -1?)
 
-#print multi_find(THEME_SONG, "weird", 0, 337)
-#print multi_find(THEME_SONG, "wild", 0, 337)
-#print find("hello", "el", 0, 4)
-#print multi_find("hello hello hello", "el", 0, 14)
+
+print find("hello", "el", 0, 5)
+print multi_find("hello hello hello", "el", 0, 18)
