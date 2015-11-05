@@ -30,6 +30,7 @@ def multi_find(input_string, substring, start, end):
             if input_string[index:index+len(substring)] == substring:
                 indexes += str(index) + ","
             index += 1
+    indexes = indexes[0:-1]
     return indexes
 
 
