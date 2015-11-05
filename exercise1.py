@@ -30,7 +30,6 @@ print pig_latinify("scratch")
 
 
 
-
-
-
 __license__ = "MIT License"
+
+pig_latinify(word)
