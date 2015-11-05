@@ -32,8 +32,27 @@ def test_multi_find_basic():
 
 # test cases
 # include instances where substring is found
+
+def test_find_substring():
+    assert find("I'm in class right now", "now", 0, 22) == 19
+
 # include instances where substring is not found
-# does that refer to ones where the substring isn't present in the string?
+
+def test_not_find_substring():
+    assert find("I'm in class right now", "signal", 0, 22) == -1
+
+def test_not_in_scope():
+    assert find("I'm in class right now", "signal", 0, 15) == -1
+
+def test_scope_is_large():
+    assert find("I'm in class right now", "signal", 0, 25) == -1
+
+def test_end_negative():
+    assert find("I'm in class right now", "signal", 0, -22) == -1
+
+def test_start_():
+    assert find("I'm in class right now", "signal", -1, -22) == -1
 
 def test_find_specific():
-    assert find("I'm in class right now", "now", 0, 21) == 19
+    assert find("I'm in class right now", "signal", -22, -1) == -1
+

@@ -54,25 +54,47 @@ def test_alphabet():
     assert pig_latinify("zed") == "edzay"
 
 
-
-
 def test_first_letter_vowel():
      assert pig_latinify("abroad") == "abroadyay"
+     assert pig_latinify("eligible") == "eligibleyay"
+     assert pig_latinify("ideal") == "idealyay"
+     assert pig_latinify("oil") == "oilyay"
+     assert pig_latinify("utility") == "utilityyay"
 
-def test__not_first_letter_vowel():
+
+def test_not_first_letter_vowel():
+     assert pig_latinify("banana") == "ananabay"
+     assert pig_latinify("cream") == "eamcray"
+     assert pig_latinify("do") == "oday"
+     assert pig_latinify("fantastic") == "antasticfay"
      assert pig_latinify("pie") == "iepay"
+
 
 def test__all_vowel():
      assert pig_latinify("eau") == "eauyay"
+     assert pig_latinify("i.e.") == "i.e.yay"
+
+
+def test__all_consonant():
+     assert pig_latinify("why") == "whyay"
+     assert pig_latinify("cry") == "cryay"
+
 
 def test_with_numbers():
      assert pig_latinify("name123") == "ame123nay"
+     assert pig_latinify("123name") == "ame123nay"
+
+def test_with_capital():
+     assert pig_latinify("Canada") == "anadaCay"
+     assert pig_latinify("TORONTO") == "ORONTOTay"
 
 def test_with_hyphen():
      assert pig_latinify("top-down") == "op-downtay"
+     assert pig_latinify("X-eye") == "eyeX-ay"
 
 def test_with_dot():
      assert pig_latinify("e.g.") == "e.g.yay"
+     assert pig_latinify("Dr.") == ""
 
 
 # add exception for when y is a vowel

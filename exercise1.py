@@ -29,5 +29,4 @@ def pig_latinify(word):
             return word + "ay"
 
 
-
 __license__ = "MIT License"
