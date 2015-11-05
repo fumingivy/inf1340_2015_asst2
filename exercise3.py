@@ -77,10 +77,6 @@ def intersection(table1, table2):
             new_table += table1[row]
     return new_table
 
-    # does row-by-row comparison of tables
-    # does index-by-index comparison of rows
-    # finds rows that are in both table1 and table2
-    # creates a new table containing those rows
     """
     Describe your function
     1. checks that the schema for both tables are the same
