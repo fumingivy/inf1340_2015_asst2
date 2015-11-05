@@ -22,6 +22,7 @@ GRADUATES = [["Number", "Surname", "Age"],
             [7274, "Robinson", 37],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
+
 def remove_duplicates(l):
     """
     Removes duplicates from l, where l is a List of Lists.
@@ -42,19 +43,11 @@ def union(table1, table2):
     row = 1
     new_table = []
     for line in table1[0:-1]:
-        index = 0
-        for column in table1[row]:
-            new_table += [table1[row], table2[row]]
-            index += 1
+        new_table += [table1[row], table2[row]]
         row += 1
     new_table = remove_duplicates(new_table)
     return new_table
-    # compares the tables row by row to make sure that each entry (i.e. table[row][column]) matches.
-    # takes one version of the rows that match
-    # takes from both tables the rows that done match
-    # returns a new table of all the rows that appear in table1 or table2 or both
-        #remove duplicates
-        # possible to not generate duplicates in the first place
+
     """
     Perform the union set operation on tables, table1 and table2.
 
