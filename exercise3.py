@@ -58,7 +58,6 @@ def union(table1, table2):
         if tables t1 and t2 don't have the same attributes
     """
 
-print union(GRADUATES, MANAGERS)
 
 def intersection(table1, table2):
     row = 0
