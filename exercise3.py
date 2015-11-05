@@ -13,14 +13,42 @@ __copyright__ = "2015 Susan Sim"
 __license__ = "MIT License"
 
 
+MANAGERS = [["Number", "Surname", "Age"],
+            [9297, "O'Malley", 56],
+            [7432, "O'Malley", 39],
+            [9824, "Darkes", 38]]
+
+GRADUATES = [["Number", "Surname", "Age"],
+            [7274, "Robinson", 37],
+            [7432, "O'Malley", 39],
+            [9824, "Darkes", 38]]
+def remove_duplicates(l):
+    """
+    Removes duplicates from l, where l is a List of Lists.
+    :param l: a List
+    """
+
+    d = {}
+    result = []
+    for row in l:
+        if tuple(row) not in d:
+            result.append(row)
+            d[tuple(row)] = True
+
+    return result
+
+
 def union(table1, table2):
-    row = 0
-    index = 0
+    row = 1
     new_table = []
-    for line in table1:
+    for line in table1[0:-1]:
+        index = 0
         for column in table1[row]:
-            if table1[row][index] == table2[row][index]:
-                new_table = "something"
+            new_table += [table1[row], table2[row]]
+            index += 1
+        row += 1
+    new_table = remove_duplicates(new_table)
+    return new_table
     # compares the tables row by row to make sure that each entry (i.e. table[row][column]) matches.
     # takes one version of the rows that match
     # takes from both tables the rows that done match
@@ -36,8 +64,8 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
-    return []
 
+print union(GRADUATES, MANAGERS)
 
 def intersection(table1, table2):
     row = 0
