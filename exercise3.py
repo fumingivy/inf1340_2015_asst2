@@ -39,14 +39,30 @@ def remove_duplicates(l):
     return result
 
 
+def check_match(table1, table2):
+    index = 0
+    matching = False
+    for column in table1[0]:
+        if table1[0][index] == table2[0][index]:
+            matching = True
+            index += 1
+        else:
+            matching = False
+    if matching is True:
+        return True
+    else:
+        return False
+
 def union(table1, table2):
-    row = 1
-    new_table = [table1[0]]
-    for line in table1[0:-1]:
-        new_table += [table1[row], table2[row]]
+    row = 0
+    new_table = []
+    for line in table1:
+        new_table += [table1[row]]
+        new_table += [table2[row]]
         row += 1
     new_table = remove_duplicates(new_table)
     return new_table
+    # result = remove_duplicates(new_table)
 
     """
     Perform the union set operation on tables, table1 and table2.
@@ -57,20 +73,6 @@ def union(table1, table2):
     :raises: MismatchedAttributesException:
         if tables t1 and t2 don't have the same attributes
     """
-
-def check_match(table1, table2):
-    index = 0
-    matching = False
-    for column in table1[0]:
-        if table2[0][index] == table2[0][index]:
-            matching = True
-            index += 1
-        else:
-            matching = False
-    if matching is True:
-        return matching
-    else:
-        return MismatchedAttributesException
 
 def intersection(table1, table2):
     row = 0
@@ -131,7 +133,7 @@ def difference(table1, table2):
     :raises: MismatchedAttributesException Error
     """
     return []
-
+print union(GRADUATES, MANAGERS)
 print difference(GRADUATES, MANAGERS)
 print difference(MANAGERS, GRADUATES)
 print intersection(GRADUATES, MANAGERS)

@@ -18,8 +18,26 @@ def find(input_string, substring, start, end):
             return index
         index += 1
 
+    else:
+        return "-1"
+
+
     # if substring isn't there, return NONE (or -1?)
 
+THEME_SONG = "It's gonna get a little weird" \
+             "gonna get a little wild" \
+             "I ain't from round here" \
+             "I'm from another dimension" \
+             "gonna get a little weird" \
+             "gonna have a good! time!" \
+             "I ain't from round here" \
+             "I'm from another WHOO-HOO" \
+             "I'm talkin rainbows" \
+             "I'm talking puppies" \
+             "it's gonna get a little weird" \
+             "gonna get a little wild" \
+             "I ain't from round here" \
+             "I'm from another dimension!"
 
 def multi_find(input_string, substring, start, end):
     index = 0
@@ -29,8 +47,10 @@ def multi_find(input_string, substring, start, end):
             if input_string[index:index+len(substring)] == substring:
                 indexes += str(index) + ","
             index += 1
-    indexes = indexes[0:-1]
-    return indexes
+        indexes = indexes[0:-1]
+        return indexes
+    else:
+        return " "
 
 
     # if the substring isn't there, return NONE (or -1?)
