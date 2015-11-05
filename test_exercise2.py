@@ -64,3 +64,20 @@ def test_not_found_find():
 
 def test_not_found_multi_find():
     assert multi_find(THEME_SONG, "Star Butterfly", 0, 337) == ""
+
+def test_find_substring():
+    assert find("I'm in class right now", "now", 0, 22) == 19
+
+# include instances where substring is not found
+
+
+def test_not_in_scope():
+    assert find("I am starving now.", "now", 0, 8) == -1
+
+
+def test_end_negative():
+    assert find("Class is warmer than my home.", "my", 0, -29) == -1
+
+def test_start_negative():
+    assert find("We need coffee.", "coffee", -1, -15) == -1
+
