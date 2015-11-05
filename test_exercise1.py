@@ -63,13 +63,16 @@ def test__not_first_letter_vowel():
      assert pig_latinify("pie") == "iepay"
 
 def test__all_vowel():
-     assert pig_latinify("eye") == "eyeyay"
+     assert pig_latinify("eau") == "eauyay"
 
 def test_with_numbers():
      assert pig_latinify("name123") == "ame123nay"
 
 def test_with_hyphen():
      assert pig_latinify("top-down") == "op-downtay"
+
+def test_with_dot():
+     assert pig_latinify("e.g.") == "e.g.yay"
 
 
 # add exception for when y is a vowel
