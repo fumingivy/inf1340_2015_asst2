@@ -78,9 +78,8 @@ def test__all_consonant():
 
 
 def test_with_numbers():
-     assert pig_latinify("name123") == "ame123nay"
-     assert pig_latinify("123name") == "ame123nay"
-
+    assert pig_latinify("name123") == "ame123nay"
+    assert pig_latinify("21st-century") == "entury21st-cay"
 
 def test_with_capital():
      assert pig_latinify("Canada") == "anadaCay"
