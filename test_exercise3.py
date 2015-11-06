@@ -83,8 +83,8 @@ def test_union_works():
     assert is_equal(result, union(MANAGERS, GRADUATES))
 
 def test_union_errors():
-    assert union(GRADUATES, MISMATCHED) == None
-    assert union(MANAGERS, MISMATCHED) == None
+    assert union(GRADUATES, MISMATCHED) is None
+    assert union(MANAGERS, MISMATCHED) is None
 
 def test_intersection_works():
     result = [["Number", "Surname", "Age"],
@@ -92,12 +92,17 @@ def test_intersection_works():
               [9824, "Darkes", 38]]
     assert is_equal(result, intersection(MANAGERS, GRADUATES))
 
-
-
+def test_intersection_errors():
+    assert intersection(GRADUATES, MISMATCHED) is None
+    assert intersection(MANAGERS, MISMATCHED) is None
 
 def test_difference_passes():
     result = [["Number", "Surname", "Age"],
               [9297, "O'Malley", 56]]
     assert is_equal(result, difference(MANAGERS, GRADUATES))
+
+def test_difference_errors():
+    assert difference(GRADUATES, MISMATCHED) is None
+    assert difference(MANAGERS, MISMATCHED) is None
 
 
