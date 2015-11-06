@@ -41,10 +41,6 @@ def test_first_letter_consonant():
      assert pig_latinify("fantastic") == "antasticfay"
      assert pig_latinify("pie") == "iepay"
 
-# tests for when the word is all vowels
-def test__all_vowel():
-     assert pig_latinify("eau") == "eauyay"
-     assert pig_latinify("i.e.") == "i.e.yay"
 
 # tests for when the letter y is a vowel instead of a consonant
 def test_y_is_vowel():
@@ -52,35 +48,31 @@ def test_y_is_vowel():
      assert pig_latinify("cry") == "ycray"
      assert pig_latinify("xylophone") == "ylophonexay"
 
+# tests for when the letter y is a consonant
 def test_y_is_consonant():
     assert pig_latinify("yellow") == "ellowyay"
     assert pig_latinify("young") == "oungyay"
     assert pig_latinify("Yankees") == "ankeesYay"
 
+# tests for words that start with q (to see if "qu" exception works)
 def test_starts_with_q():
     assert pig_latinify("question") == "estionquay"
     assert pig_latinify("queen") == "eenquay"
     assert pig_latinify("quietly") == "ietlyquay"
 
-def test_with_numbers():
-    assert pig_latinify("name123") == "ame123nay"
-    assert pig_latinify("21st-century") == "entury21st-cay"
-
+# tests for words with capital letters in them
 def test_with_capital():
      assert pig_latinify("Canada") == "anadaCay"
      assert pig_latinify("TORONTO") == "ORONTOTay"
 
-def test_with_punctuation():
-     assert pig_latinify("top-down") == "op-downtay"
-     assert pig_latinify("X-eye") == "eyeX-ay"
-     assert pig_latinify("e.g.") == "e.g.yay"
-     assert pig_latinify("Capt.") == "apt.Cay"
-     assert pig_latinify("ham-fisted") == "am-fistedhay"
-
+# tests for different kind of errors
 def test_for_errors():
     try:
         pig_latinify(12345)
     except TypeError:
-        assert True
+        assert pig_latinify(12345) == TypeError
+    assert pig_latinify("hyphenated-word") == ""
+    assert pig_latinify(12345) == ""
+    assert pig_latinify("username1withnumbers") == ""
 
 
