@@ -15,7 +15,6 @@ def find(input_string, substring, start, end):
         if input_string[index:index+len(substring)] == substring:
             return index
         index += 1
-
     else:
         return -1
 
