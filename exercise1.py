@@ -9,10 +9,11 @@ This module converts English words to Pig Latin words
 __author__ = 'Eden Rusnell & Ming Fu'
 
 
-# assuming word is lowercase, and is changeable
+
+# function to return word in pig latin
 def pig_latinify(word):
     output = ""
-    vowels = "aeiou"
+    vowels = "aeiouAEIOU"
     y_except = "y"
     first_letter = word[0]
     if first_letter in vowels:
@@ -28,5 +29,4 @@ def pig_latinify(word):
         if first_letter in y_except:
             return word + "ay"
 
-
-__license__ = "MIT License"
+#pig_latinify("word")
