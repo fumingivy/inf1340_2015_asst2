@@ -6,10 +6,7 @@ Test module for exercise3.py
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
+__author__ = 'Eden Rusnell & Ming Fu'
 
 from exercise3 import union, intersection, difference
 
@@ -37,6 +34,12 @@ MISMATCHED = [["Name", "Age", "Title", "Sign"],
 def is_equal(t1, t2):
     return set(map(tuple, t1)) == set(map(tuple, t2))
 
+class MismatchedAttributesException(Exception):
+    """
+    Raised when attempting set operations with tables that
+    don't have the same attributes.
+    """
+    pass
 
 ###################
 # TEST FUNCTIONS ##
@@ -79,10 +82,39 @@ def test_difference():
 # test cases added by module authors
 
 def test_union_works():
-    resultant_table = [["Number", "Name", "Age"],
-                        [7274, "Robinson", 37],
-                        [9297, "O'Malley", 56],
-                        [7432, "O'Malley", 39],
-                        [9824, "Darkes", 38]]
-    assert is_equal(resultant_table, union(GRADUATES, MANAGERS))
-def test_union_error():
+    result = [["Number", "Surname", "Age"],
+              [7274, "Robinson", 37],
+              [9297, "O'Malley", 56],
+              [7432, "O'Malley", 39],
+              [9824, "Darkes", 38]]
+    assert is_equal(result, union(MANAGERS, GRADUATES))
+
+def test_union_errors():
+    try:
+        union(GRADUATES, MISMATCHED)
+    except:
+        assert MismatchedAttributesException
+
+
+def test_intersection_works():
+    result = [["Number", "Surname", "Age"],
+              [7432, "O'Malley", 39],
+              [9824, "Darkes", 38]]
+    assert is_equal(result, intersection(MANAGERS, GRADUATES))
+
+def test_intersection_errors():
+    try:
+        intersection(GRADUATES, MISMATCHED)
+    except:
+        assert MismatchedAttributesException
+
+def test_difference_passes():
+    result = [["Number", "Surname", "Age"],
+              [9297, "O'Malley", 56]]
+    assert is_equal(result, difference(MANAGERS, GRADUATES))
+
+def test_difference_errors():
+    try:
+        difference(MANAGERS, MISMATCHED)
+    except:
+        assert MismatchedAttributesException
