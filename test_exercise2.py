@@ -6,10 +6,7 @@ Test module for exercise2.py
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
+__author__ = 'Eden Rusnell & Ming Fu'
 
 from exercise2 import find, multi_find
 
@@ -49,34 +46,27 @@ def test_multi_find_basic():
 # include instances where substring is not found
 # does that refer to ones where the substring isn't present in the string?
 
+# test cases where find should work normally
 def test_find_normal():
     assert find("I'm in class right now", "now", 0, 21) == 19
     assert find(THEME_SONG, "dimension", 0, 337) == 92
 
-
+# test cases where multi_find should work normally
 def test_multi_find_normal():
     assert multi_find(THEME_SONG, "weird", 0, 337) == "24,120,259"
     assert multi_find(THEME_SONG, "wild", 0, 337) == "48,283"
 
+# test cases where find should not work
 def test_not_found_find():
     assert find("I'm busy", "Jackson", 0, 7) == -1
 
+# test cases where multi_find shouldn't work
 def test_not_found_multi_find():
     assert multi_find(THEME_SONG, "Star Butterfly", 0, 337) == ""
 
-def test_find_substring():
-    assert find("I'm in class right now", "now", 0, 22) == 19
-
-# include instances where substring is not found
-
-
+# test cases where the substring is not in the scope
 def test_not_in_scope():
     assert find("I am starving now.", "now", 0, 8) == -1
-
-
-def test_end_negative():
     assert find("Class is warmer than my home.", "my", 0, -29) == -1
-
-def test_start_negative():
     assert find("We need coffee.", "coffee", -1, -15) == -1
 
