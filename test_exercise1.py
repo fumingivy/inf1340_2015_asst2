@@ -6,10 +6,7 @@ Test module for exercise1.py
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
+__author__ = 'Eden Rusnell & Ming Fu'
 
 
 from exercise1 import pig_latinify
@@ -53,7 +50,7 @@ def test_alphabet():
     assert pig_latinify("yellow") == "ellowyay"
     assert pig_latinify("zed") == "edzay"
 
-
+# tests for when the first letter is a vowel
 def test_first_letter_vowel():
      assert pig_latinify("abroad") == "abroadyay"
      assert pig_latinify("eligible") == "eligibleyay"
@@ -61,28 +58,29 @@ def test_first_letter_vowel():
      assert pig_latinify("oil") == "oilyay"
      assert pig_latinify("utility") == "utilityyay"
 
-
-def test_not_first_letter_vowel():
+# tests for when the first letter is a consonant
+def test_first_letter_consonant():
      assert pig_latinify("banana") == "ananabay"
      assert pig_latinify("cream") == "eamcray"
      assert pig_latinify("do") == "oday"
      assert pig_latinify("fantastic") == "antasticfay"
      assert pig_latinify("pie") == "iepay"
 
-
+# tests for when the word is all vowels
 def test__all_vowel():
      assert pig_latinify("eau") == "eauyay"
      assert pig_latinify("i.e.") == "i.e.yay"
 
-
+# tests for when the letter y is a vowel instead of a consonant
 def test__all_consonant():
-     assert pig_latinify("why") == "whyay"
-     assert pig_latinify("cry") == "cryay"
+     assert pig_latinify("why") == "ywhay"
+     assert pig_latinify("cry") == "ycray"
 
 
 def test_with_numbers():
      assert pig_latinify("name123") == "ame123nay"
      assert pig_latinify("123name") == "ame123nay"
+
 
 def test_with_capital():
      assert pig_latinify("Canada") == "anadaCay"
@@ -94,7 +92,7 @@ def test_with_hyphen():
 
 def test_with_dot():
      assert pig_latinify("e.g.") == "e.g.yay"
-     assert pig_latinify("Dr.") == "Dr.ay"
+     assert pig_latinify("Capt.") == "apt.Cay"
 
 
 # add exception for when y is a vowel
