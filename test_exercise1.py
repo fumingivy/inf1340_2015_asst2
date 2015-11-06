@@ -70,13 +70,17 @@ def test_with_capital():
      assert pig_latinify("Canada") == "anadaCay"
      assert pig_latinify("TORONTO") == "ORONTOTay"
 
-def test_with_hyphen():
+def test_with_punctuation():
      assert pig_latinify("top-down") == "op-downtay"
      assert pig_latinify("X-eye") == "eyeX-ay"
-
-def test_with_dot():
      assert pig_latinify("e.g.") == "e.g.yay"
      assert pig_latinify("Capt.") == "apt.Cay"
+     assert pig_latinify("ham-fisted") == "am-fistedhay"
+
+def test_for_errors():
+    try:
+        pig_latinify(12345)
+    except TypeError:
+        assert True
 
 
-# add exception for when y is a vowel
