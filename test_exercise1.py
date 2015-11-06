@@ -24,31 +24,6 @@ def test_basic():
     assert pig_latinify("is") == "isyay"
     assert pig_latinify("apple") == "appleyay"
 
-def test_alphabet():
-    assert pig_latinify("agoraphobic") == "agoraphobicyay"
-    assert pig_latinify("bumblebee") == "umblebeebay"
-    assert pig_latinify("crashing") == "ashingcray"
-    assert pig_latinify("divinity") == "ivinityday"
-    assert pig_latinify("ergonomic") == "ergonomicyay"
-    assert pig_latinify("fortunate") == "ortunatefay"
-    assert pig_latinify("goulash") == "oulashgay"
-    assert pig_latinify("herbs") == "erbshay"
-    assert pig_latinify("igloo") == "iglooyay"
-    assert pig_latinify("jealousy") == "ealousyjay"
-    assert pig_latinify("killers") == "illerskay"
-    assert pig_latinify("linework") == "ineworklay"
-    assert pig_latinify("manageable") == "anageablemay"
-    assert pig_latinify("noble") == "oblenay"
-    assert pig_latinify("opulent") == "opulentyay"
-    assert pig_latinify("quietly") == "ietlyquay"
-    assert pig_latinify("robust") == "obustray"
-    assert pig_latinify("sombulent") == "ombulentsay"
-    assert pig_latinify("television") == "elevisiontay"
-    assert pig_latinify("university") == "universityyay"
-    assert pig_latinify("witchy") == "itchyway"
-    assert pig_latinify("xylophone") == "ylophonexay"
-    assert pig_latinify("yellow") == "ellowyay"
-    assert pig_latinify("zed") == "edzay"
 
 # tests for when the first letter is a vowel
 def test_first_letter_vowel():
@@ -72,10 +47,20 @@ def test__all_vowel():
      assert pig_latinify("i.e.") == "i.e.yay"
 
 # tests for when the letter y is a vowel instead of a consonant
-def test__all_consonant():
+def test_y_is_vowel():
      assert pig_latinify("why") == "ywhay"
      assert pig_latinify("cry") == "ycray"
+     assert pig_latinify("xylophone") == "ylophonexay"
 
+def test_y_is_consonant():
+    assert pig_latinify("yellow") == "ellowyay"
+    assert pig_latinify("young") == "oungyay"
+    assert pig_latinify("Yankees") == "ankeesYay"
+
+def test_starts_with_q():
+    assert pig_latinify("question") == "estionquay"
+    assert pig_latinify("queen") == "eenquay"
+    assert pig_latinify("quietly") == "ietlyquay"
 
 def test_with_numbers():
     assert pig_latinify("name123") == "ame123nay"
