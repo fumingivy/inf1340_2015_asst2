@@ -9,6 +9,10 @@ implemented as lists of lists.
 
 __author__ = 'Eden Rusnell & Ming Fu'
 
+##########
+# TABLES #
+##########
+
 
 GRADUATES = [["Number", "Surname", "Age"],
              [7274, "Robinson", 37],
@@ -24,6 +28,15 @@ MISMATCHED = [["Name", "Age", "Title", "Sign"],
               ["Tom", 23, "Dr.", "Libra"],
               ["Jenny", 47, "Captain", "Gemini"]]
 
+TIMS_LIST = [["Name", "Quest", "Colour"],
+            ["Arthur", "To seek the Grail", "Blue"],
+            ["Robin", "To seek the Grail," "Blue - no, yellow!"]]
+
+TIMS_ASKS = [["Name", "Quest", "Colour"],
+            ["Arthur", "To seek the Grail", "Blue"],
+            ["Galahad", "To seek the Grail", "Red"],
+            ["Lancelot", "To seek the Grail", "Mauve"],
+            ["Ringo", "To seek the Grail", "Turquoise"]]
 
 #####################
 # HELPER FUNCTIONS ##
@@ -52,9 +65,9 @@ class MismatchedAttributesException(Exception):
     pass
 
 
-###########
-#FUNCTIONS#
-##########
+#############
+# FUNCTIONS##
+############
 
 
 def check_match(table1, table2):
@@ -73,70 +86,82 @@ def check_match(table1, table2):
         return ""
 
 def union(table1, table2):
-    matching = False
     matching = check_match(table1, table2)
     if matching is True:
-        row = 0
         new_table = []
-        for line in table1:
-            new_table += [table1[row]]
-            new_table += [table2[row]]
-            row += 1
-            new_table = remove_duplicates(new_table)
+        new_table += table1
+        new_table += table2
+        new_table = remove_duplicates(new_table)
         return new_table
-    if matching is False:
-        return ""
 
 
 
 def intersection(table1, table2):
-    row = 0
-    row1 = 1
-    new_table = [table1[0]]
-    in_both = False
-    while row1 < len(table1):
+    matching = check_match(table1, table2)
+    if matching is True:
         row = 0
-        for rows in table1:
-            index = 0
-            for columns in table1[row1]:
-                if table1[row1][index] == table2[row][index]:
-                    in_both = True
-                else:
-                    in_both = False
-                index += 1
-            if in_both is True:
-                new_table += [table1[row1]]
-            row += 1
-        row1 += 1
-    return new_table
+        row1 = 1
+        new_table = [table1[0]]
+        in_both = False
+        while row1 < len(table1):
+            row = 0
+            for rows in table1:
+                index = 0
+                for columns in table1[row1]:
+                    if table1[row1][index] == table2[row][index]:
+                        in_both = True
+                    else:
+                        in_both = False
+                    index += 1
+                if in_both is True:
+                    new_table += [table1[row1]]
+                row += 1
+            row1 += 1
+        return new_table
 
 
 def difference(table1, table2):
-    row = 0
-    row1 = 0
-    new_table = [table1[0]]
-    unique = False
-    for rows in table1[0:-1]:
-        index = 0
-        for columns in table1[row1]:
-            if table1[row1][index] == table2[row][index]:
-                unique = False
-            else:
-                unique = True
-            index += 1
-        row += 1
+    matching = check_match(table1, table2)
+    if matching is True:
+        row1 = 0
+        new_table = []
+        unique = False
+        while row1 < len(table1):
+            row = 0
+            for rows in table1:
+                index = 0
+                for columns in table1[row1]:
+                    if table1[row1][index] == table2[row][index]:
+                        unique = False
+                    index += 1
 
-    row1 += 1
-    if unique is True:
-        new_table += [table1[row1]]
-    return new_table
+            row += 1
+        if unique is True:
+            new_table += [table1[row1]]
+        row1 += 1
+        new_table = remove_duplicates(new_table)
+        return new_table
 
-print union(GRADUATES, MANAGERS)
-print difference(GRADUATES, MANAGERS)
-print difference(MANAGERS, GRADUATES)
-print intersection(GRADUATES, MANAGERS)
-print union(GRADUATES, MISMATCHED)
 
+def difference(table1, table2):
+    matching = check_match(table1, table2)
+    if matching is True:
+        row = 0
+        new_table = [table1[0]]
+        unique = False
+        for rows in table1:
+            index = 0
+            for columns in table1[row]:
+                if table1[row][index] == table2[row][index]:
+                    unique = False
+                else:
+                    unique = True
+                index += 1
+                if unique is True:
+                    new_table += [table1[row]]
+            row += 1
+        new_table = remove_duplicates(new_table)
+        return new_table
 
 
 
