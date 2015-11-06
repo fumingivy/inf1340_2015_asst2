@@ -33,16 +33,7 @@ MISMATCHED = [["Name", "Age", "Title", "Sign"],
               ["Tom", 23, "Dr.", "Libra"],
               ["Jenny", 47, "Captain", "Gemini"]]
 
-TIMS_LIST = [["Name", "Quest", "Colour"],
-            ["Arthur", "To seek the Grail", "Blue"],
-            ["Robin", "To seek the Grail," "Blue - no, yellow!"]]
 
-TIMS_ASKS = [["Name", "Quest", "Colour"],
-            ["Arthur", "To seek the Grail", "Blue"],
-            ["Galahad", "To seek the Grail", "Red"],
-            ["Lancelot", "To seek the Grail", "Mauve"],
-            ["Ringo", "To seek the Grail", "Turquoise"],
-            ["Arthur", "To seek the Grail", "Blue"]]
 
 #####################
 # HELPER FUNCTIONS ##
@@ -150,3 +141,13 @@ def difference(table1, table2):
         new_table = remove_duplicates(new_table)
         return new_table
 
+""""
+example functions:
+print union(GRADUATES, MANAGERS)
+print intersection(GRADUATES, MANAGERS)
+print difference(GRADUATES, MANAGERS)
+print difference(MANAGERS, GRADUATES)
+print union(GRADUATES, MISMATCHED)
+print intersection(MANAGERS, MISMATCHED)
+print difference(MISMATCHED, MANAGERS)
+"""
