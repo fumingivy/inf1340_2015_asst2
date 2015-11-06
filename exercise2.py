@@ -6,11 +6,9 @@ This module converts performs substring matching for DNA sequencing
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
+__author__ = 'Eden Rusnell & Ming Fu'
 
+# function to find a single instance of a substring
 def find(input_string, substring, start, end):
     index = 0
     for letter in range(start, end):
@@ -22,23 +20,7 @@ def find(input_string, substring, start, end):
         return "-1"
 
 
-    # if substring isn't there, return NONE (or -1?)
-
-THEME_SONG = "It's gonna get a little weird" \
-             "gonna get a little wild" \
-             "I ain't from round here" \
-             "I'm from another dimension" \
-             "gonna get a little weird" \
-             "gonna have a good! time!" \
-             "I ain't from round here" \
-             "I'm from another WHOO-HOO" \
-             "I'm talkin rainbows" \
-             "I'm talking puppies" \
-             "it's gonna get a little weird" \
-             "gonna get a little wild" \
-             "I ain't from round here" \
-             "I'm from another dimension!"
-
+# function to find multiple instances of a substring
 def multi_find(input_string, substring, start, end):
     index = 0
     indexes = ""
@@ -53,8 +35,7 @@ def multi_find(input_string, substring, start, end):
         return " "
 
 
-    # if the substring isn't there, return NONE (or -1?)
 
 
-print find("hello", "el", 0, 5)
-print multi_find("hello hello hello", "el", 0, 18)
+# find("hello", "el", 0, 5)
+# multi_find("hello hello hello", "el", 0, 18)
