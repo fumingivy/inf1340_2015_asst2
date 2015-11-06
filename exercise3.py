@@ -69,7 +69,8 @@ def check_match(table1, table2):
     if matching is True:
         return True
     else:
-        return MismatchedAttributesException
+        MismatchedAttributesException
+        return ""
 
 def union(table1, table2):
     matching = False
