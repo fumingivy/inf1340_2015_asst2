@@ -17,7 +17,7 @@ def find(input_string, substring, start, end):
         index += 1
 
     else:
-        return "-1"
+        return -1
 
 
 # function to find multiple instances of a substring
