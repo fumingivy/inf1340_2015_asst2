@@ -76,7 +76,13 @@ def test_difference():
 
     assert is_equal(result, difference(GRADUATES, MANAGERS))
 
-# add your own test cases
-# include tables with various schema
-# which produce a variety of results with the table operations
+# test cases added by module authors
 
+def test_union_works():
+    resultant_table = [["Number", "Name", "Age"],
+                        [7274, "Robinson", 37],
+                        [9297, "O'Malley", 56],
+                        [7432, "O'Malley", 39],
+                        [9824, "Darkes", 38]]
+    assert is_equal(resultant_table, union(GRADUATES, MANAGERS))
+def test_union_error():
