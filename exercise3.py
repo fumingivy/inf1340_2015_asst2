@@ -7,10 +7,7 @@ implemented as lists of lists.
 
 """
 
-__author__ = 'Susan Sim'
-__email__ = "ses@drsusansim.org"
-__copyright__ = "2015 Susan Sim"
-__license__ = "MIT License"
+__author__ = 'Eden Rusnell & Ming Fu'
 
 
 MANAGERS = [["Number", "Surname", "Age"],
@@ -79,7 +76,7 @@ def intersection(table1, table2):
                     in_both = False
                 index += 1
             if in_both is True:
-                new_table += [table1[row]]
+                new_table += [table1[row1]]
             row += 1
         row1 += 1
     return new_table
@@ -98,10 +95,10 @@ def difference(table1, table2):
             else:
                 unique = True
             index += 1
+        if unique is True:
+            new_table += [table1[row1]]
         row += 1
     row1 += 1
-    if unique is True:
-        new_table += [table1[row1]]
     return new_table
 
 # print union(GRADUATES, MANAGERS)
