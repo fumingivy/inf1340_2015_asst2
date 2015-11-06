@@ -62,17 +62,6 @@ def union(table1, table2):
         row += 1
     new_table = remove_duplicates(new_table)
     return new_table
-    # result = remove_duplicates(new_table)
-
-    """
-    Perform the union set operation on tables, table1 and table2.
-
-    :param table1: a table (a List of Lists)
-    :param table2: a table (a List of Lists)
-    :return: the resulting table
-    :raises: MismatchedAttributesException:
-        if tables t1 and t2 don't have the same attributes
-    """
 
 def intersection(table1, table2):
     row = 0
@@ -95,14 +84,6 @@ def intersection(table1, table2):
         row1 += 1
     return new_table
 
-    """
-    Describe your function
-    1. checks that the schema for both tables are the same
-    2. returns a new table that contains all unique rows that appear in BOTH tables
-    :raises: MismathedAttributesException Error
-    """
-    return []
-
 
 def difference(table1, table2):
     row = 0
@@ -122,21 +103,13 @@ def difference(table1, table2):
     if unique is True:
         new_table += [table1[row1]]
     return new_table
-    # does row-by-row comparison of tables
-    # does index-by-index comparison of rows
-    # finds rows that are in table 1 and NOT in table 2
-    # creates new table containing those rows
-    """
-    Describe your function
-    1. checks that the schema for both tables are the same
-    2. returns a new table that contains all unique rows that appear in the FIRST table but not the second
-    :raises: MismatchedAttributesException Error
-    """
-    return []
-print union(GRADUATES, MANAGERS)
-print difference(GRADUATES, MANAGERS)
-print difference(MANAGERS, GRADUATES)
-print intersection(GRADUATES, MANAGERS)
+
+# print union(GRADUATES, MANAGERS)
+# print difference(GRADUATES, MANAGERS)
+# print difference(MANAGERS, GRADUATES)
+# print intersection(GRADUATES, MANAGERS)
+
+
 #####################
 # HELPER FUNCTIONS ##
 #####################
