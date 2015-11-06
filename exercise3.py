@@ -10,16 +10,24 @@ implemented as lists of lists.
 __author__ = 'Eden Rusnell & Ming Fu'
 
 
+GRADUATES = [["Number", "Surname", "Age"],
+             [7274, "Robinson", 37],
+             [7432, "O'Malley", 39],
+             [9824, "Darkes", 38]]
+
 MANAGERS = [["Number", "Surname", "Age"],
             [9297, "O'Malley", 56],
             [7432, "O'Malley", 39],
             [9824, "Darkes", 38]]
 
-GRADUATES = [["Number", "Surname", "Age"],
-            [7274, "Robinson", 37],
-            [9824, "Darkes", 38],
-            [7432, "O'Malley", 39]]
+MISMATCHED = [["Name", "Age", "Title", "Sign"],
+              ["Tom", 23, "Dr.", "Libra"],
+              ["Jenny", 47, "Captain", "Gemini"]]
 
+
+#####################
+# HELPER FUNCTIONS ##
+#####################
 def remove_duplicates(l):
     """
     Removes duplicates from l, where l is a List of Lists.
@@ -36,6 +44,19 @@ def remove_duplicates(l):
     return result
 
 
+class MismatchedAttributesException(Exception):
+    """
+    Raised when attempting set operations with tables that
+    don't have the same attributes.
+    """
+    pass
+
+
+###########
+#FUNCTIONS#
+##########
+
+
 def check_match(table1, table2):
     index = 0
     matching = False
@@ -48,17 +69,24 @@ def check_match(table1, table2):
     if matching is True:
         return True
     else:
-        return False
+        return MismatchedAttributesException
 
 def union(table1, table2):
-    row = 0
-    new_table = []
-    for line in table1:
-        new_table += [table1[row]]
-        new_table += [table2[row]]
-        row += 1
-    new_table = remove_duplicates(new_table)
-    return new_table
+    matching = False
+    matching = check_match(table1, table2)
+    if matching is True:
+        row = 0
+        new_table = []
+        for line in table1:
+            new_table += [table1[row]]
+            new_table += [table2[row]]
+            row += 1
+            new_table = remove_duplicates(new_table)
+        return new_table
+    if matching is False:
+        return ""
+
+
 
 def intersection(table1, table2):
     row = 0
@@ -95,41 +123,19 @@ def difference(table1, table2):
             else:
                 unique = True
             index += 1
-        if unique is True:
-            new_table += [table1[row1]]
         row += 1
+
     row1 += 1
+    if unique is True:
+        new_table += [table1[row1]]
     return new_table
 
-# print union(GRADUATES, MANAGERS)
-# print difference(GRADUATES, MANAGERS)
-# print difference(MANAGERS, GRADUATES)
-# print intersection(GRADUATES, MANAGERS)
+print union(GRADUATES, MANAGERS)
+print difference(GRADUATES, MANAGERS)
+print difference(MANAGERS, GRADUATES)
+print intersection(GRADUATES, MANAGERS)
+print union(GRADUATES, MISMATCHED)
 
 
-#####################
-# HELPER FUNCTIONS ##
-#####################
-def remove_duplicates(l):
-    """
-    Removes duplicates from l, where l is a List of Lists.
-    :param l: a List
-    """
 
-    d = {}
-    result = []
-    for row in l:
-        if tuple(row) not in d:
-            result.append(row)
-            d[tuple(row)] = True
-
-    return result
-
-
-class MismatchedAttributesException(Exception):
-    """
-    Raised when attempting set operations with tables that
-    don't have the same attributes.
-    """
-    pass
 
