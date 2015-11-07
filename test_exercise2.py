@@ -70,3 +70,9 @@ def test_not_in_scope():
     assert find("Class is warmer than my home.", "my", 0, -29) == -1
     assert find("We need coffee.", "coffee", -1, -15) == -1
 
+# test cases where the substring is not the the scope for multi_find
+def test_not_in_multifind_scope():
+    assert multi_find(THEME_SONG, "weird", 0, 5) == ""
+    assert multi_find(THEME_SONG, "dimension", 0, 16) == ""
+    assert multi_find("We say Ni! We say Ni! We say Ni! We say Ni! We say Ni!", "Ni!", 0, 7) == ""
+
