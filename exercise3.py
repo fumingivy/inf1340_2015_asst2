@@ -33,6 +33,8 @@ MISMATCHED = [["Name", "Age", "Title", "Sign"],
               ["Tom", 23, "Dr.", "Libra"],
               ["Jenny", 47, "Captain", "Gemini"]]
 
+NOCOMMON = [["Number", "Name", "Age"]]
+
 
 
 #####################
@@ -148,3 +150,7 @@ print union(GRADUATES, MISMATCHED)
 print intersection(MANAGERS, MISMATCHED)
 print difference(MISMATCHED, MANAGERS)
 """
+print intersection(GRADUATES, NOCOMMON)
+print difference(GRADUATES, NOCOMMON)
+print intersection(NOCOMMON, MANAGERS)
+print difference(NOCOMMON, MANAGERS)
