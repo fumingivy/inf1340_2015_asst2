@@ -11,6 +11,7 @@ __author__ = 'Eden Rusnell & Ming Fu'
 """
 assumptions:
 that the word is going to be English
+that the letter y is always a consonant (eg. "xylophone" is "olophonexylay" not "ylophonexay")
 """
 
 
@@ -23,13 +24,16 @@ def pig_latinify(word):
         raise ValueError
     if word[0] in vowels:
         return word + "yay"
-    while word[0] not in vowels:
+    for letter in word:
         word = word[1:] + word[0]
         if word[0] in vowels:
             return word + "ay"
+    if vowels not in word:
+        return word[1:] + word[0] + "ay"
 
 
 
 
 
 # print pig_latinify("word")
+print pig_latinify("xylophone")
