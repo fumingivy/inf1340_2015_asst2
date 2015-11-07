@@ -28,6 +28,8 @@ MISMATCHED = [["Name", "Age", "Title", "Sign"],
               ["Tom", 23, "Dr.", "Libra"],
               ["Jenny", 47, "Captain", "Gemini"]]
 
+NOCOMMON = [["Number", "Name", "Age"]]
+
 #####################
 # HELPER FUNCTIONS ##
 #####################
@@ -117,3 +119,6 @@ def test_error_raised():
     except MismatchedAttributesException:
         assert True
 
+def test_nothing_in_common():
+    assert difference(NOCOMMON, MANAGERS) is None
+    assert intersection(GRADUATES, NOCOMMON) is None
