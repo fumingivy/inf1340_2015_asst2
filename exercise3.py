@@ -81,8 +81,6 @@ def check_match(table1, table2):
         return True
     else:
         MismatchedAttributesException
-        return ""
-
 
 # function to return a new table that contains all rows that appear in either table
 def union(table1, table2):
@@ -118,8 +116,6 @@ def intersection(table1, table2):
                 row += 1
             row1 += 1
         return new_table
-
-
 
 # function to return a table that contains (table header and) all rows that appear in the first table only
 def difference(table1, table2):
