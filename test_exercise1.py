@@ -44,9 +44,8 @@ def test_first_letter_consonant():
 
 # tests for when the letter y is a vowel instead of a consonant
 def test_y_is_vowel():
-     assert pig_latinify("why") == "ywhay"
-     assert pig_latinify("cry") == "ycray"
-     assert pig_latinify("xylophone") == "ylophonexay"
+     assert pig_latinify("why") == "hyway"
+     assert pig_latinify("cry") == "rycay"
 
 # tests for when the letter y is a consonant
 def test_y_is_consonant():
@@ -56,23 +55,26 @@ def test_y_is_consonant():
 
 # tests for words that start with q (to see if "qu" exception works)
 def test_starts_with_q():
-    assert pig_latinify("question") == "estionquay"
-    assert pig_latinify("queen") == "eenquay"
-    assert pig_latinify("quietly") == "ietlyquay"
+    assert pig_latinify("question") == "uestionqay"
+    assert pig_latinify("queen") == "ueenqay"
+    assert pig_latinify("quietly") == "uietlyqay"
 
 # tests for words with capital letters in them
 def test_with_capital():
      assert pig_latinify("Canada") == "anadaCay"
      assert pig_latinify("TORONTO") == "ORONTOTay"
 
+# tests words with weird punctuation in them
+def test_punctuation():
+    assert pig_latinify("ham-fisted") == "am-fistedhay"
+    assert pig_latinify("sugar-free") == "ugar-freesay"
+
 # tests for different kind of errors
 def test_for_errors():
     try:
         pig_latinify(12345)
-    except TypeError:
-        assert pig_latinify(12345) == TypeError
-    assert pig_latinify("hyphenated-word") == ""
-    assert pig_latinify(12345) == ""
-    assert pig_latinify("username1withnumbers") == ""
+    except ValueError:
+        assert True
+
 
 
