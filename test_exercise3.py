@@ -116,8 +116,8 @@ def test_union_errors():
 def test_error_raised():
     try:
         union(MANAGERS, MISMATCHED)
-    except MismatchedAttributesException:
-        assert True
+    except MismatchedAttributesError:
+        assert MismatchedAttributesException
 
 def test_nothing_in_common():
     assert difference(NOCOMMON, MANAGERS) is None
