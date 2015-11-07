@@ -8,7 +8,7 @@ Test module for exercise3.py
 
 __author__ = 'Eden Rusnell & Ming Fu'
 
-from exercise3 import union, intersection, difference
+from exercise3 import union, intersection, difference, MismatchedAttributesException
 
 
 ###########
@@ -32,7 +32,7 @@ MISMATCHED = [["Name", "Age", "Title", "Sign"],
 # HELPER FUNCTIONS ##
 #####################
 def is_equal(t1, t2):
-    return set(map(tuple, t1)) == set(map(tuple, t2))
+     return sorted(t1) == sorted(t2)
 
 ###################
 # TEST FUNCTIONS ##
@@ -74,6 +74,31 @@ def test_difference():
 
 # test cases added by module authors
 
+
+def test_intersection_works():
+    result = [["Number", "Surname", "Age"],
+              [7432, "O'Malley", 39],
+              [9824, "Darkes", 38]]
+    assert is_equal(result, intersection(MANAGERS, GRADUATES))
+
+
+def test_intersection_errors():
+    assert intersection(GRADUATES, MISMATCHED) is None
+    assert intersection(MANAGERS, MISMATCHED) is None
+
+def test_difference_works():
+    result = [["Number", "Surname", "Age"],
+              [9297, "O'Malley", 56]]
+    assert is_equal(result, difference(MANAGERS, GRADUATES))
+
+    result2 = [["Number", "Surname", "Age"],
+               [7274, "Robinson", 37]]
+    assert is_equal(result2, difference(GRADUATES, MANAGERS))
+
+def test_difference_errors():
+    assert difference(GRADUATES, MISMATCHED) is None
+    assert difference(MANAGERS, MISMATCHED) is None
+
 def test_union_works():
     result = [["Number", "Surname", "Age"],
               [7274, "Robinson", 37],
@@ -86,23 +111,9 @@ def test_union_errors():
     assert union(GRADUATES, MISMATCHED) is None
     assert union(MANAGERS, MISMATCHED) is None
 
-def test_intersection_works():
-    result = [["Number", "Surname", "Age"],
-              [7432, "O'Malley", 39],
-              [9824, "Darkes", 38]]
-    assert is_equal(result, intersection(MANAGERS, GRADUATES))
-
-def test_intersection_errors():
-    assert intersection(GRADUATES, MISMATCHED) is None
-    assert intersection(MANAGERS, MISMATCHED) is None
-
-def test_difference_passes():
-    result = [["Number", "Surname", "Age"],
-              [9297, "O'Malley", 56]]
-    assert is_equal(result, difference(MANAGERS, GRADUATES))
-
-def test_difference_errors():
-    assert difference(GRADUATES, MISMATCHED) is None
-    assert difference(MANAGERS, MISMATCHED) is None
-
+def test_error_raised():
+    try:
+        union(MANAGERS, MISMATCHED)
+    except MismatchedAttributesException:
+        assert True
 
