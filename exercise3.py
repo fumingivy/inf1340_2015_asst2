@@ -120,6 +120,7 @@ def intersection(table1, table2):
         return new_table
 
 
+
 # function to return a table that contains (table header and) all rows that appear in the first table only
 def difference(table1, table2):
     matching = check_match(table1, table2)
